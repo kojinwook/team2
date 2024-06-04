@@ -1,5 +1,6 @@
 package com.example.back.dto.request.auth;
 
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -12,8 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignUpRequestDto {
-
+public class SignUpRequestDto{
     @NotBlank
     private String userId;
 

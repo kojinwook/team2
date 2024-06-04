@@ -1,6 +1,8 @@
 package com.example.back.entity;
 
+
 import com.example.back.dto.request.auth.SignUpRequestDto;
+import com.example.back.dto.response.auth.SignUpResponseDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.checkerframework.checker.units.qual.C;
 
 @Getter
 @Setter
@@ -16,9 +19,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity(name="user")
 @Table(name="user")
-public class UserEntity {
+public class UserEntity{
     @Id
-    @Column(name = "user_id")
+    @Column(name="user_id")
     private String userId;
     private String password;
     @Column(name = "email")
@@ -33,26 +36,26 @@ public class UserEntity {
         this.userId = dto.getUserId();
         this.password = dto.getPassword();
         this.email = dto.getEmail();
-        this.nickname = dto.getNickname();
+        this.nickname= dto.getNickname();
         this.type = "app";
         this.role = "ROLE_USER";
     }
-
     public UserEntity(String userId, String email, String type, String nickname, String profileImage){
         this.userId = userId;
         this.password = "Password";
         this.email = email;
         this.nickname = nickname;
-        this.profileImage = profileImage;
+        this.profileImage =  profileImage;
         this.type = type;
         this.role = "ROLE_USER";
     }
-
     public void setNickname(String nickname){
-        this.nickname = nickname;
+        this.nickname=nickname;
+    }
+    public void setProfileImage(String profileImage){
+        this.profileImage= profileImage;
     }
 
-    public void setProfileImage(String profileImage){
-        this.profileImage = profileImage;
-    }
+
+
 }
